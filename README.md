@@ -1,3 +1,5 @@
+# Codigo desenvolvido para poder usar a API do ChatGPT dentro do chatbot da empresa onde trabalho
+
 # BaseBot (Flask + RAG)
 Assistente que **responde exclusivamente com base** no banco de dados interno.
 Inclui:

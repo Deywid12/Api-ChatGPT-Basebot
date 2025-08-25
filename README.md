@@ -26,3 +26,5 @@ curl -sX POST http://localhost:8000/chat -H "Content-Type: application/json" -d 
 ## Observações
 - O endpoint `/chat` **não inventa** nada: se não achar, retorna a frase padrão exigida.
 - Para **listar títulos** de uma subclasse: `{"query":"listar erros", "classe":"studio"}` ou `GET /list?classe=studio`.
+
+'''teste

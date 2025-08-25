@@ -1,0 +1,7 @@
+flask
+python-dotenv
+pydantic
+numpy
+scikit-learn
+tiktoken
+openai>=1.40.0

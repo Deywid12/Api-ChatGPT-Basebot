@@ -1,0 +1,121 @@
+{
+  "erros": [
+    {
+      "titulo": "Falha na Inicialização da Thread TCP/UDP - Erro \"Anselmo\"",
+      "porque_ocorre": "A aplicação não conseguiu iniciar a thread de recebimento TCP/UDP (\"Error starting TCP/UDP receive thread\"), impedindo a comunicação de rede necessária.",
+      "tratativa": "- Faça backup da pasta de licença atual do servidor.\n- Substitua a pasta da licença do servidor por uma cópia íntegra/atualizada.\n- Reinicie a máquina/servidor para aplicar as alterações.",
+      "resolucao": "Após substituir a pasta de licença e reiniciar, a aplicação inicializa corretamente a thread TCP/UDP e o erro deixa de ocorrer.",
+      "link_da_base": "",
+      "identificadores": ["anselmo", "tcp/udp", "error starting tcp/udp receive thread", "falha inicialização thread"]
+    },
+    {
+      "titulo": "Erro Bitmap",
+      "porque_ocorre": "Ocorre quando há problemas na geração do QR Code, geralmente por ausência ou corrupção do arquivo de imagem Bitmap utilizado no template.",
+      "tratativa": "- Se o cliente nunca configurou o QR Code, seguir as instruções de configuração no artigo indicado.\n- Caso o QR Code esteja configurado em outra estação, copiar a imagem do QR Code (arquivo BMP) do cliente localizada no disco C: e na pasta de templates para a estação que apresenta o erro.",
+      "resolucao": "Após configurar ou substituir o arquivo BMP do QR Code na pasta correta, a geração e impressão dos documentos volta a funcionar normalmente.",
+      "link_da_base": "",
+      "identificadores": ["bitmap", "bitmap image is not valid", "qr code", "bmp"]
+    },
+    {
+      "titulo": "Erro IPL e imagens não aparecendo no template",
+      "porque_ocorre": "Pode ser causado por configuração incorreta do PrintMode, valor elevado do Resize, impressora padrão configurada incorretamente, parâmetro ExportRes muito alto ou configuração inadequada da região e idioma do Windows.",
+      "tratativa": "- Acesse o arquivo rcfstudio2.ini do cliente.\n- Certifique-se de que a imagem não está com Resize aplicado incorretamente.\n- Ajuste o parâmetro PrintMode para 3.\n- Reduza o valor de ExportRes (máximo recomendado: 500).\n- Verifique se a região do Windows está configurada para PT-BR.\n- Caso o tomógrafo exija, mantenha o idioma do sistema em Inglês.\n- Reinicie o Windows para aplicar as alterações.",
+      "resolucao": "Após ajustar os parâmetros no arquivo de configuração e corrigir a região/idioma do Windows, o erro IPL deixa de ocorrer e as imagens voltam a ser exibidas corretamente no template.",
+      "link_da_base": "",
+      "identificadores": ["ipl", "imagem não aparece no template", "printmode", "exportres", "resize", "imagem em branco"]
+    },
+    {
+      "titulo": "Erro sistema pedindo senha do Windows ao tentar acessar o servidor pela rede",
+      "porque_ocorre": "As políticas de segurança de rede do cliente estão configuradas para não permitir logon de usuários convidados não autenticados, bloqueando o acesso à pasta compartilhada.",
+      "tratativa": "- Acesse o comando `gpedit.msc` pelo Windows (disponível apenas na versão Pro).\n- Vá em: Modelos Administrativos > Rede > Estação de trabalho do LANMAN > Habilitar logons de convidados não seguros.\n- Configure a opção para **Habilitado**.\n- Caso seja Windows Home, é necessário acionar o TI ou inserir a senha de administrador do servidor.\n- Se o problema persistir, verifique comunicação de rede, faixas de IP e demais configurações.",
+      "resolucao": "Após habilitar logons de convidados não seguros, o acesso ao compartilhamento de rede é liberado sem solicitar credenciais adicionais.",
+      "link_da_base": "",
+      "identificadores": ["senha do windows", "acesso servidor rede", "logons de convidados não seguros", "gpedit", "192.168", "pasta compartilhada"]
+    },
+    {
+      "titulo": "Erros comuns de Twain",
+      "porque_ocorre": "Podem ocorrer por configurações incorretas no arquivo de integração do Twain, presença de arquivos antigos nas pastas de imagens do scanner ou uso de parâmetros incompatíveis para a integração.",
+      "tratativa": "- Para erro code 804: verifique o caminho do arquivo `twainmaster.ini` (ou equivalente na pasta `twain_32`) e altere a configuração de Transfer para MEMORY8.\n- Para erro de pasta 'Images': acesse as pastas indicadas (`C:\\\\ProgramData\\\\Duer\\\\images` ou `C:\\\\ProgramData\\\\Scan\\\\images`) e remova ou renomeie arquivos antigos.\n- Ative a visualização de pastas ocultas para localizar `ProgramData`.\n- Remova tags Twain do arquivo `.ini` global no Studio quando não forem necessárias (exceto em casos específicos como Kavo ou Gnatus).",
+      "resolucao": "Após corrigir as configurações no arquivo `.ini` e limpar as pastas de imagens antigas, a integração Twain volta a funcionar corretamente.",
+      "link_da_base": "",
+      "identificadores": ["twain", "error code 804", "pasta images", "memory8", "twainmaster.ini", "scanner"]
+    },
+    {
+      "titulo": "Falta de armazenamento/espaço em disco (Stream Write Error)",
+      "porque_ocorre": "Ocorre quando não há espaço disponível no disco do servidor ou da estação, impedindo a gravação de arquivos pelo sistema.",
+      "tratativa": "- Exclua componentes e arquivos não utilizados do sistema.\n- Caso não haja nada seguro para excluir, oriente o cliente a contactar o TI para liberar espaço.\n- Alternativamente, transfira o banco de dados para outro disco com espaço disponível.",
+      "resolucao": "Após liberar espaço no disco ou mover o banco de dados para outro local com armazenamento disponível, o erro deixa de ocorrer.",
+      "link_da_base": "",
+      "identificadores": ["stream write error", "falta de espaço", "armazenamento", "disco cheio", "espaço em disco"]
+    }
+  ],
+  "studio": [
+    {
+      "titulo": "Como Ativar as Opções de Visibilidade",
+      "porque_ocorre": "Em algumas estações que utilizam o Studio 3, as opções de publicação na aba Distribuição podem não estar disponíveis, impedindo o envio do exame para o iDoc do dentista ou do laudador.",
+      "tratativa": "- Clique em **Arquivo** (canto superior esquerdo).\n- Selecione **Configurações**.\n- Acesse a aba **Internet**.\n- Marque **Permitir Laudos On-line** e **Permitir Alterar Visibilidade**.\n- Reinicie a máquina para aplicar as alterações.",
+      "resolucao": "As opções de publicação na aba Distribuição ficam disponíveis e o envio de exames volta ao normal.",
+      "link_da_base": "",
+      "identificadores": ["ativar opções de visibilidade", "laudos online", "alterar visibilidade", "aba internet", "distribuição"]
+    },
+    {
+      "titulo": "Passo a Passo para Inserção de Templates",
+      "porque_ocorre": "Necessidade de incluir templates prontos na documentação do paciente dentro do Studio.",
+      "tratativa": "- Abra a documentação no Studio que já contenha as imagens.\n- Na parte superior direita, acesse a aba **Impressão**.\n- Escolha a **pasta de templates** desejada.\n- Selecione um ou mais templates (ficam destacados em azul).\n- Clique em **Inserir relatórios selecionados na doc** para adicioná-los à documentação.",
+      "resolucao": "Os templates selecionados passam a compor a documentação do paciente.",
+      "link_da_base": "",
+      "identificadores": ["inserção de templates", "aba impressão", "templates", "inserir relatórios selecionados", "adicionar template", "documentação"]
+    },
+    {
+      "titulo": "Configuração do BurnStudio",
+      "porque_ocorre": "O BurnStudio é uma ferramenta complementar necessária para a gravação de CDs no Studio. Caso não esteja configurado, a funcionalidade de gravação não estará disponível.",
+      "tratativa": "- Baixe o executável do BurnStudio pelo link: https://drive.google.com/file/d/0B5XFm3yexjGdTURIcWZnTThrbDQ/view?resourcekey=0-v4VvqaqUyt1ia8eSezJgmg\n- Execute a instalação.\n- Reinicie a máquina para aplicar as alterações.",
+      "resolucao": "Após a instalação e reinicialização, a função de gravação de CDs no Studio passa a funcionar normalmente.",
+      "link_da_base": "",
+      "identificadores": ["burnstudio", "configuração burnstudio", "gravação de cd", "instalar burnstudio", "cd studio"]
+    },
+    {
+      "titulo": "Configurar QR Code",
+      "porque_ocorre": "Necessidade de configurar o QR Code nos templates do Studio para identificação e acesso rápido aos exames.",
+      "tratativa": "- Baixe os templates com código QR no link: https://drive.google.com/drive/folders/1PEyrjwHGtPcED25ojbSv5TDbNODViHHt\n- Importe os templates no Studio.\n- Configure o QR Code para que apareça nos exames.",
+      "resolucao": "Após importar e configurar, o QR Code passa a ser exibido nos documentos e exames, permitindo acesso rápido às informações.",
+      "link_da_base": "",
+      "identificadores": ["configurar qr code", "qr code studio", "template qr", "qr code exame"]
+    },
+    {
+      "titulo": "Configuração da Dry",
+      "porque_ocorre": "Necessidade de configurar a impressora radiográfica Dry no Studio para permitir a impressão de radiografias com o módulo Dicom Print.",
+      "tratativa": "- Valide se o cliente possui o produto **Dicom Print** ativo no Dashboard do Assinante.\n- Solicite as seguintes informações ao cliente: AE Title, IP, Porta e Resolução.\n- No Studio, vá em **Arquivo > Configurações** e acesse **Dicom Print**.\n- Preencha as informações coletadas e salve.",
+      "resolucao": "Após a configuração correta, a impressora Dry passa a imprimir as radiografias diretamente pelo Studio.",
+      "link_da_base": "",
+      "identificadores": ["configurar dry", "impressora dry", "dicom print", "ae title", "porta", "resolução", "ip impressora"]
+    },
+    {
+      "titulo": "Resoluções impressoras Dicom",
+      "porque_ocorre": "Necessidade de saber as resoluções recomendadas para diferentes modelos de impressoras Dicom ao configurar no Studio.",
+      "tratativa": "- Carestream DV5800: 508\n- Carestream DV5700: 325\n- Carestream DV5950: 508\n- Carestream DV6850: 650\n- AGFA DS5302: 320\n- AGFA DS5300: 320 ou 325\n- DRYPIX Lite: 300\n- DRYPIX: ~390 (testar valor próximo em DPI)\n- DRYPRIMA: 254, 325 ou 508 (usar 325; se cortar, usar 254; se sair pequeno, usar 508)",
+      "resolucao": "Ao configurar as impressoras com as resoluções recomendadas, garante-se a melhor qualidade e proporção na impressão.",
+      "link_da_base": "",
+      "identificadores": ["resolução dicom", "resolução impressora", "carestream", "agfa", "drypix", "dryprima"]
+    }
+  ],
+  "xwork": [
+    {
+      "titulo": "S3Up - Procedimento de atendimento (Backup automático Gestão Profissional)",
+      "porque_ocorre": "O status do S3Up pode ficar em 'Falha' quando a base não é atualizada há >7 dias, quando o banco do XWork está grande (≈100–110 MB ou mais), quando o s3up.exe está desatualizado/sem privilégios de administrador, quando falta o arquivo PPK de configuração, quando há arquivos travados (.nfs*) no destino ou quando há perda de conexão com o RadioServer.",
+      "tratativa": "- **Antes de tudo**: remova qualquer modo de compatibilidade do s3up.exe e configure para **Executar como administrador**.\n- **Checagem no Dashboard**: confirme que o cliente possui o produto *Gestão Profissional*. Se aparecer aviso de base desatualizada (status 'Falha'), informe no canal **#Falhas3Up** (Blip Desk) e o gestor (Miguel). Sem resposta do cliente, **não** executar.\n- **Acesso autorizado**: peça acesso ao **servidor** (TeamViewer) e verifique:\n  1) **Tamanho do banco XWork**. Se estiver **entre ~100 e 110 MB ou acima**, **agende Manutenção do XWork** primeiro.\n  2) Na **pasta do S3Up do cliente**, valide se o **s3up.exe** é a versão mais recente.\n- **Execução**: rode o **s3up.exe** como administrador e acompanhe o **s3up_log**. Sucesso típico: \"BD copiado e reparado na primeira execução\" seguido de upload.\n- **Falhas comuns e correções**:\n  - **OSError [Errno 16] Device or resource busy (.nfs*)**: feche processos que mantêm arquivos abertos no destino (serviços, antivírus, mapeamentos). Se necessário, reinicie o servidor e rode novamente.\n  - **Lost connection to the remote system**: testar internet/latência, proxy/firewall, DNS. Garantir rota/porta liberada até o RadioServer e tentar de novo.\n  - **PPK solicitado**: peça no grupo \"alguém pode me enviar o ppk do adm XXXX?\" para quem tem acesso ao **RadioServer**. Coloque o PPK no local solicitado pelo instalador e repita a execução.\n  - **Versão/instalação**: se persistir, **reinstale** o S3Up (última versão) e reexecute como administrador.\n- **Evidências**: anote no ticket última atualização mostrada no aviso, horário da tentativa, **tamanho do banco**, versão do s3up.exe e cole trechos relevantes do **s3up_log**.",
+      "resolucao": "Com PPK válido, s3up.exe atualizado e executado como administrador (sem compatibilidade), sem arquivos travados e com conectividade ao RadioServer, o log indica cópia/repair e upload concluídos (Errors: 0) e o status do S3Up volta a 'Atualizado'. Se o banco estava ≥100–110 MB, a Manutenção do XWork é feita antes e, após ela, o S3Up finaliza normalmente.",
+      "link_da_base": "",
+      "identificadores": ["s3up", "gestão profissional", "backup automático", "ppk", "s3up_log", "device or resource busy", "errno 16", ".nfs", "lost connection to the remote system", "radio server", "executar como administrador", "modo de compatibilidade", "100mb", "110mb", "manutenção xwork"]
+    },
+    {
+      "titulo": "Manutenção do XWork (quando banco ≥100 MB)",
+      "porque_ocorre": "Quando o banco de dados do XWork (`banco.xwf`) ultrapassa aproximadamente 100 MB, o sistema pode apresentar lentidão ou falhas, especialmente no Studio, devido ao excesso de registros antigos, campos despadronizados ou corrompidos. Essa situação exige limpeza e otimização para restaurar a performance.",
+      "tratativa": "- **Verificações pré-manutenção** (obrigatórias para bancos grandes):\n  - Confirmar se o servidor é Windows Server; se for necessário, migrar apenas o XWork para um Windows comum.\n  - Aplicar permissão \"Todos\" à pasta do XWork e aos usuários relevantes.\n  - Limpar pastas `%temp%` e `temp`.\n  - Revisar antivírus, permissões, exclusões de pasta e filtros de firewall.\n  - Checar rede e latência com `ping` (ideal ≤5 ms, oscilações acima de 10 ms indicam instabilidade).\n  - Verificar configurações de energia do servidor para evitar desligamento do HD.\n  - Garantir que todas as estações fechem o XWork durante o processo.\n- **Backup completo**: Copiar a pasta do XWork, incluindo `banco.xwf`, `banco.pk.fdb`, `xwork.ult`, `abrir_xwork.exe` e executáveis.\n- **Abrir no Microsoft Access**: Acessar todas as tabelas e verificar/remover erros.\n- **Limpeza de dados por período**:\n  - Tabelas: 16 | 16A | 16C | 21 | 23 | 23A | 24C | 24CA → manter apenas o período acordado com o cliente.\n  - `XW16A`: remover registros cujo CP Pedido seja menor que o menor CP da XW16.\n  - `XW16C`: mesmo critério da XW16A.\n  - `XW23` e `XW23A`: filtrar por data.\n  - `XW24C` e `XW24CA`: filtrar por data.\n- **Remover clientes não vinculados** (SQL):\n```sql\nSELECT XW01.*\nFROM XW01\nWHERE NOT EXISTS (\n    SELECT 1 FROM XW16\n    WHERE XW16.CPCLIENTE = XW01.CP\n)\nAND NOT EXISTS (\n    SELECT 1 FROM XW24C\n    WHERE XW24C.CP = XW01.CP\n);\n```\n- **Verificar linha de inicialização**: Conferir se as tabelas `XW16`, `XW16A` e `XW16B` possuem linha de inicialização. Se não, copiar de outro banco.\n- **Versão e conversão**: Voltar a versão do banco e converter usando a versão mais nova do `xwork.exe`. Após conversão, confirmar permissões de usuários.\n- **Trocar pasta**: Substituir a pasta `xwork` do cliente por nova, mantendo `arquivos.xws`, `xwork.ult`, pasta `S3Up`, `pk.fdb` e o **banco pós-manutenção** `.xwf`.\n- **Padronização de campos**: Ajustar o campo nome/cliente nas tabelas `XW01`, `XW16`, `XW24C`, `XW24CA` para 65 caracteres.\n- **Verificação de corrupção**: Remover linhas com `#########`.\n- **SQL de limpeza final**: Executar scripts para cadastros órfãos e inconsistências.\n- **Testes finais**: Converter o banco e subir no S3Up.\n- **Reprocesso**: Caso erro na reconversão, repetir verificações e confirmar consistência estrutural.",
+      "resolucao": "Após a remoção de registros antigos, padronização de campos, eliminação de linhas corrompidas e execução de scripts de limpeza, o banco reduz de tamanho, mantém apenas dados necessários, corrige inconsistências e volta a operar de forma estável, restaurando a performance.",
+      "link_da_base": "",
+      "identificadores": ["manutenção xwork", "banco xwf", "acima de 100mb", "lentidão", "access", "sql limpeza", "#########", "cadastros órfãos", "s3up", "banco.pk.fdb", "xwork.ult", "abrir_xwork.exe", "limpeza de tabelas", "padronização campos", "pré-manutenção", "permissão todos", "ping", "firewall", "energia hd"]
+    }
+  ],
+  "integracao": []
+}

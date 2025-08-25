@@ -1,4 +1,5 @@
-# O BaseBot é uma API de suporte técnico desenvolvida para a Radio Memory, com o objetivo de centralizar a base de conhecimento de erros, manutenções e integrações dos sistemas Studio e XWork. Toda a base de dados é fornecida ao GPT em formato de texto estruturado, permitindo que ele responda de forma precisa e consistente.
+O **BaseBot** é uma **API de suporte técnico** desenvolvida para a **Radio Memory**, com o objetivo de centralizar a base de conhecimento de **erros, manutenções e integrações** dos sistemas **Studio** e **XWork**.
+Toda a base de dados é fornecida ao GPT em formato de **texto estruturado**, permitindo que ele responda de forma precisa e consistente.
 
 # BaseBot (Flask + RAG)
 Assistente que **responde exclusivamente com base** no banco de dados interno.

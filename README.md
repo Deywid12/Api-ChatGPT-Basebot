@@ -2,12 +2,12 @@ O **BaseBot** é uma **API de suporte técnico** desenvolvida para a **Radio Mem
 Toda a base de dados é fornecida ao GPT em formato de **texto estruturado**, permitindo que ele responda de forma precisa e consistente.
 
 # BaseBot (Flask + RAG)
-Assistente que **responde exclusivamente com base** no banco de dados interno.
-Inclui:
-- `/ingest` para ingerir/atualizar base (JSON).
-- `/search` para buscar com filtro por `classe` e prioridade de **identificadores**.
-- `/chat` que **implementa as regras do agente** (JSON por padrão, Markdown opcional).
-- Bootstrap automático do arquivo em `BOOTSTRAP_FILE` (veja `.env.example`).
+## 🚀 Funcionalidades
+
+* Estrutura organizada com **Causa, Tratativa e Observações**
+* Base de conhecimento documentada em texto no GPT
+* API pronta para consultas de suporte
+* Foco em erros, manutenções e integrações
 
 ## Rodar
 ```bash
@@ -24,8 +24,23 @@ curl -s "http://localhost:8000/search?q=twain&classe=erros&k=5"
 curl -sX POST http://localhost:8000/chat -H "Content-Type: application/json" -d '{"query":"Erro: Error starting TCP/UDP receive thread", "classe":"erros"}' | jq
 ```
 
-## Observações
-- O endpoint `/chat` **não inventa** nada: se não achar, retorna a frase padrão exigida.
-- Para **listar títulos** de uma subclasse: `{"query":"listar erros", "classe":"studio"}` ou `GET /list?classe=studio`.
+
+## 👨‍💻 Autores
+
+**Victor Raphael**
+💼 Técnico de Suporte na [Radio Memory](https://www.radiomemory.com.br/)
+🎓 Engenharia de Software - UNA
+🚀 Entusiasta de **IA, automação e backend**
+
+[![LinkedIn](https://img.shields.io/badge/-Victor_Raphael-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/dev-victor-raphael)
+[![GitHub](https://img.shields.io/badge/-EooVictor-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/EooVictor)
+
+**Deywid Souza**
+💼 Técnico de Suporte na [Radio Memory](https://www.radiomemory.com.br/)
+🎓 Ciência da computação - UNA
+🚀 **IA, automação e backend**
+
+[![LinkedIn](https://img.shields.io/badge/-Deywid_Souza-0077B5?style=for-the-badge\&logo=linkedin\&logoColor=white)](https://www.linkedin.com/in/deywid-souza/)
+[![GitHub](https://img.shields.io/badge/-Deywid12-181717?style=for-the-badge\&logo=github\&logoColor=white)](https://github.com/Deywid12)
 
 

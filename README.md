@@ -9,13 +9,19 @@ Toda a base de dados é fornecida ao GPT em formato de **texto estruturado**, pe
 * API pronta para consultas de suporte
 * Foco em erros, manutenções e integrações
 
-## Rodar
-```bash
-python -m venv .venv && . .venv/bin/activate      # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-cp .env.example .env && nano .env                 # cole sua API key
-python app.py
+## 📂 Estrutura do Projeto
+
 ```
+📦 basebot
+ ┣ 📂 data                # banco de dados
+ ┣ 📜 .env.example        # aqruivo env
+ ┣ 📜 license             # Licença de uso
+ ┣ 📜 README.md           # Documentação do projeto
+ ┗ 📜 openai_client.py    # Link da key do GPT
+ ┣ 📜 rag.py              # Configurações da API
+ ┣ 📜 requirements.txt    # Arquivos necessarios para rodar a API
+ ┗ 📜 schema.py           # Aquivo schema
+````
 
 ## Testes rápidos
 ```bash
